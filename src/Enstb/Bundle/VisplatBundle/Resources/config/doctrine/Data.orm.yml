@@ -25,4 +25,5 @@ Enstb\Bundle\VisplatBundle\Entity\Data:
             joinColumn:
                 patientID:
                     referencedColumnName: id
+                    onDelete: "SET NULL"
 

@@ -45,6 +45,8 @@ Enstb\Bundle\VisplatBundle\Entity\User:
         doctorId:
             targetEntity: User
             inversedBy: patients
+            joinColumn: 
+                onDelete: "SET NULL"
 
     lifecycleCallbacks:
         prePersist: [ setDateCreatedValue ]
