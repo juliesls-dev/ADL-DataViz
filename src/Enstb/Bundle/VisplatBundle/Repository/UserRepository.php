@@ -17,7 +17,7 @@ class UserRepository extends EntityRepository
         $sql = "
             SELECT `Event`, `Begin`, `End`, COUNT(`Event`) AS Frequency,
             TIMESTAMPDIFF( SECOND, `Begin`, `End`) AS Time
-            FROM `Data_" . $patientId . "`
+            FROM `DATA_" . $patientId . "`
             WHERE DATE(`begin`)
             BETWEEN
             STR_TO_DATE(:startDate,'%d/%b/%Y')
@@ -43,7 +43,7 @@ class UserRepository extends EntityRepository
             SELECT `Event` AS `taskName`,
 			`Begin` AS `startDate`,
 			`End` AS `endDate`
-			FROM `Data_" . $patientId . "`
+			FROM `DATA_" . $patientId . "`
 			WHERE DATE(`begin`)
             BETWEEN
             STR_TO_DATE(:startDate,'%d/%b/%Y')
@@ -66,7 +66,7 @@ class UserRepository extends EntityRepository
     {
         $sql = "
             SELECT DISTINCT `Event` AS `taskName`
-			FROM `Data_" . $patientId . "`
+			FROM `DATA_" . $patientId . "`
 			WHERE DATE(`begin`)
             BETWEEN
             STR_TO_DATE(:startDate,'%d/%b/%Y')
@@ -141,7 +141,7 @@ class UserRepository extends EntityRepository
     {
         $sql = "
             SELECT DISTINCT DATE_FORMAT(`begin`, '%d/%b/%Y') as date
-			FROM `Data_" . $patientId . "`
+			FROM `DATA_" . $patientId . "`
 			ORDER BY `begin`;
         ";
         $stmt = $this->getEntityManager()->getConnection()->prepare($sql);
@@ -159,7 +159,7 @@ class UserRepository extends EntityRepository
     {
         $sql = "
             SELECT DISTINCT DATE_FORMAT(`begin`, '%d/%b/%Y') as begin
-			FROM `Data_" . $patientId . "`
+			FROM `DATA_" . $patientId . "`
 			ORDER BY begin
 			LIMIT 1;
         ";
@@ -178,7 +178,7 @@ class UserRepository extends EntityRepository
     {
         $sql = "
             SELECT DISTINCT `event`, MIN(TIMESTAMPDIFF( SECOND, `End`, NOW())) AS `lastTime`
-			FROM `Data_" . $patientId . "` 
+			FROM `DATA_" . $patientId . "` 
 			WHERE DATE(`begin`)
             BETWEEN
             STR_TO_DATE(:startDate,'%d/%b/%Y')

@@ -138,7 +138,7 @@ class DefaultController extends Controller
         // In case of three truncated events, "?" operation is used to verify it
         $event = $startEvent[2].'-'.$startEvent[3].(sizeof($startEvent)==6 ? '-'.$startEvent[4] : "");
         $sql = "
-            INSERT INTO Data_".$patientId." (event,begin,end)
+            INSERT INTO DATA_".$patientId." (event,begin,end)
             VALUES (:event,:begin,:end);
         ";
         $stmt = $this->getDoctrine()->getManager()->getConnection()->prepare($sql);

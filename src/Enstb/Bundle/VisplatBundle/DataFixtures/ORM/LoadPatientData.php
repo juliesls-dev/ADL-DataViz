@@ -59,7 +59,7 @@ class LoadPatientData extends AbstractFixture implements OrderedFixtureInterface
         $connection->exec($createTableSQL);
         foreach ($data as $datum) {
             $connection->exec(
-                "INSERT INTO Data_" . $patientId . " (event,begin,end)
+                "INSERT INTO DATA_" . $patientId . " (event,begin,end)
                 VALUES ('" . $datum['event'] . "','" . $datum['begin'] . "','" . $datum['end'] . "');");
         }
 
