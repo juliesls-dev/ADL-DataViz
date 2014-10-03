@@ -30,8 +30,8 @@ class AppKernel extends Kernel
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             // JSRouting to enable using route in javascript
             new FOS\JsRoutingBundle\FOSJsRoutingBundle(),
-            new Enstb\Bundle\VisplatBundle\EnstbVisplatBundle(),
-            new Enstb\Bundle\DataManagementBundle\EnstbDataManagementBundle(),
+            new VizHAAL\VisplatBundle\VizHAALVisplatBundle(),
+            new VizHAAL\DataManagementBundle\VizHAALDataManagementBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

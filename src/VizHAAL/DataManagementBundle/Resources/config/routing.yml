@@ -1,0 +1,7 @@
+vizhaal_data_management_transform:
+    pattern:  /transform
+    defaults: { _controller: VizHAALDataManagementBundle:Default:transform }
+
+vizhaal_data_management_import:
+    pattern:  /import
+    defaults: { _controller: VizHAALDataManagementBundle:Default:import }

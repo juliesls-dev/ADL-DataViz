@@ -1,6 +1,6 @@
 security:
     encoders:
-        Enstb\Bundle\VisplatBundle\Entity\User: plaintext
+        VizHAAL\VisplatBundle\Entity\User: plaintext
 
     role_hierarchy:
         Administrator: [ROLE_SUPERADMIN]
@@ -9,7 +9,7 @@ security:
 
     providers:
         main:
-          entity: { class: Enstb\Bundle\VisplatBundle\Entity\User, property: username }
+          entity: { class: VizHAAL\VisplatBundle\Entity\User, property: username }
 #        in_memory:
 #            memory:
 #                users:
@@ -30,7 +30,7 @@ security:
             form_login:
                 login_path: /login
                 check_path: /login_check
-                default_target_path: enstb_visplat_homepage
+                default_target_path: vizhaal_visplat_homepage
             logout:
                 path:   /logout
                 target: /login

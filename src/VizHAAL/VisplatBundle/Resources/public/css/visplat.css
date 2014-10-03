@@ -1,0 +1,278 @@
+/* Navbar */
+.vp-navbar {
+    margin-bottom: 0;
+    border-radius: 0;
+    min-height: 35px;
+}
+
+.vp-navbar-text {
+    margin-top: 7px;
+    margin-bottom: 0;
+    margin-right: 10px !important;
+    padding: 0;
+}
+
+#vp-navbar-fix.affix {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(248, 248, 248, 0.95);
+    z-index: 1;
+}
+
+/* Remove margin of the navbar-collapse*/
+.container > .navbar-header, .container > .navbar-collapse {
+    margin-right: 15px;
+    margin-left: 15px;
+    text-align: center;
+}
+
+/* Make the navbar-collapse list on top of everything*/
+.navbar-collapse {
+    position: relative;
+    z-index: 1;
+    background: rgba(248, 248, 248, 1);
+}
+
+/* Transform navbar-collapse list in one row*/
+#vp-navbar-fix-wrapper .navbar-nav li {
+    display: inline-block;
+}
+
+.navbar-brand {
+    position: relative;
+    z-index: 2;
+}
+
+@media (min-width: 768px) {
+    .navbar-form {
+        display: inline-block;
+        margin-right: 10px;
+    }
+}
+
+/* Login form*/
+
+.vp-login-wrapper {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: #eee;
+}
+
+.vp-form-login {
+    max-width: 330px;
+    padding: 15px;
+    margin: 0 auto;
+}
+
+.vp-form-title {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.vp-form-alert {
+    padding: 7px;
+    margin-bottom: 10px;
+    font-size: 80%;
+}
+
+/* Import form */
+.vp-import-wrapper {
+    padding: 20px 0;
+    max-width: 330px;
+    margin: 0 auto;
+}
+
+.vp-import-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Navbar form */
+.navbar-form {
+    padding: 0;
+}
+
+/*Container*/
+.container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.col-xs-1, .col-sm-1, .col-md-1, .col-lg-1, .col-xs-2, .col-sm-2, .col-md-2, .col-lg-2, .col-xs-3, .col-sm-3, .col-md-3, .col-lg-3, .col-xs-4, .col-sm-4, .col-md-4, .col-lg-4, .col-xs-5, .col-sm-5, .col-md-5, .col-lg-5, .col-xs-6, .col-sm-6, .col-md-6, .col-lg-6, .col-xs-7, .col-sm-7, .col-md-7, .col-lg-7, .col-xs-8, .col-sm-8, .col-md-8, .col-lg-8, .col-xs-9, .col-sm-9, .col-md-9, .col-lg-9, .col-xs-10, .col-sm-10, .col-md-10, .col-lg-10, .col-xs-11, .col-sm-11, .col-md-11, .col-lg-11, .col-xs-12, .col-sm-12, .col-md-12, .col-lg-12 {
+    /*position: static;*/
+}
+
+@media (min-width: 768px) {
+    .navbar > .container .navbar-brand {
+        margin-left: 20px;
+    }
+}
+
+/* Legends of graphs*/
+#legend {
+    position: relative;
+    height: 100%;
+    padding: 10% 5%;
+    display: inline;
+}
+
+.head-legend {
+    font-size: 35px;
+    text-align: center;
+
+    color: rgba(48, 173, 219, 1);
+    color: -moz-linear-gradient(left, rgba(48, 173, 219, 1) 0%, rgba(11, 126, 161, 1) 50%, rgba(48, 173, 219, 1) 100%);
+    color: -webkit-gradient(left top, right top, color-stop(0%, rgba(48, 173, 219, 1)), color-stop(50%, rgba(11, 126, 161, 1)), color-stop(100%, rgba(48, 173, 219, 1)));
+    color: -webkit-linear-gradient(left, rgba(48, 173, 219, 1) 0%, rgba(11, 126, 161, 1) 50%, rgba(48, 173, 219, 1) 100%);
+    color: -o-linear-gradient(left, rgba(48, 173, 219, 1) 0%, rgba(11, 126, 161, 1) 50%, rgba(48, 173, 219, 1) 100%);
+    color: -ms-linear-gradient(left, rgba(48, 173, 219, 1) 0%, rgba(11, 126, 161, 1) 50%, rgba(48, 173, 219, 1) 100%);
+    color: linear-gradient(to right, rgba(48, 173, 219, 1) 0%, rgba(11, 126, 161, 1) 50%, rgba(48, 173, 219, 1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#30addb', endColorstr='#30addb', GradientType=1);
+
+}
+
+.p-legend {
+    font-size: 18px;
+    color: #5A5A5A;
+    text-align: center;
+}
+
+/*For computers*/
+@media screen and (max-width: 1200px) {
+    .head-legend {
+        font-size: 35px;
+    }
+
+    .p-legend {
+        font-size: 18px;
+    }
+}
+
+/*For tablets*/
+@media screen and (max-width: 992px) {
+    .head-legend {
+        font-size: 25px;
+    }
+
+    .p-legend {
+        font-size: 14px;
+    }
+}
+
+/*For mobiles*/
+@media screen and (max-width: 768px) {
+    .head-legend {
+        font-size: 18px;
+    }
+
+    .p-legend {
+        font-size: 12px;
+    }
+}
+
+/*Pie Chart*/
+
+#piechart {
+    height: 100%;
+    margin: 10px;
+}
+
+.slice text {
+    font-size: 12pt;
+    font-family: Arial;
+}
+
+#piechartTable, #statustable {
+    margin: 10px;
+    display: inline-block;
+}
+
+table {
+    border-width: 2px;
+    border-style: solid;
+    border-color: black;
+    border-collapse: collapse;
+}
+
+th {
+    font-size: 12pt;
+    font-family: Arial;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    height: 50px;
+}
+
+th:hover {
+	background-color:#f8f8f8;
+}
+
+td {
+    font-size: 10pt;
+    font-family: Arial;
+    text-align: center;
+    border-width: 1px;
+    border-style: solid;
+    border-color: black;
+    width: 33%;
+}
+
+/* Gantt Chart */
+
+#ganttchart {
+    height: 100%;
+    margin: 10px;
+}
+
+.chart {
+    width: 60%;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.axis path, .axis line {
+    fill: none;
+    stroke: #000;
+    stroke-width: 1;
+    shape-rendering: crispEdges;
+    margin: 1000;
+}
+
+.bar {
+    fill: #30addb;
+}
+
+.bar-failed {
+    fill: #CC0000;
+}
+
+.bar-running {
+    fill: #669900;
+}
+
+.bar-succeeded {
+    fill: #30addb;
+}
+
+.bar-killed {
+    fill: #ffbb33;
+}
+
+/* Chord Diagram*/
+
+.chord path {
+    fill-opacity: .67;
+    stroke: #000;
+    stroke-width: .5px;
+}
+
+#chordDiagram {
+    height: 100%;
+    margin: 10px;
+}
+
+

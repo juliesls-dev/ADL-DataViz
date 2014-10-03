@@ -1,0 +1,7 @@
+parameters:
+#    vizhaal_data_management.example.class: VizHAAL\DataManagementBundle\Example
+
+services:
+#    vizhaal_data_management.example:
+#        class: %vizhaal_data_management.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

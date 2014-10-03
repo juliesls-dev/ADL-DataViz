@@ -1,0 +1,22 @@
+services:
+    sonata.admin.role:
+        class: VizHAAL\VisplatBundle\Administrator\RoleAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Management", label: "Roles" }
+        arguments:
+            - ~
+            - VizHAAL\VisplatBundle\Entity\Role
+            - ~
+        calls:
+            - [ setTranslationDomain, [VizHAALVisplatBundle]]
+
+    sonata.admin.user:
+            class: VizHAAL\VisplatBundle\Administrator\UserAdmin
+            tags:
+                - { name: sonata.admin, manager_type: orm, group: "Management", label: "Users" }
+            arguments:
+                - ~
+                - VizHAAL\VisplatBundle\Entity\User
+                - ~
+            calls:
+                - [ setTranslationDomain, [VizHAALVisplatBundle]]

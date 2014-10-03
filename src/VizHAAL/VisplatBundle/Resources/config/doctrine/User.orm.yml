@@ -1,0 +1,52 @@
+VizHAAL\VisplatBundle\Entity\User:
+    type: entity
+    repositoryClass: VizHAAL\VisplatBundle\Repository\UserRepository
+    table: User
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 30
+        lastName:
+            type: string
+            length: 30
+        email:
+            type: string
+            length: 60
+            unique: true
+        username:
+            type: string
+            length: 10
+            unique: true
+        password:
+            type: string
+            length: 100
+            unique: false
+        dateCreated:
+            type: datetime
+    manyToMany:
+        roles:
+            targetEntity: Role
+            mappedBy: users
+    oneToOne:
+        data:
+            targetEntity: Data
+            mappedBy: patientId
+
+#   Self-references of doctorId
+    oneToMany:
+        patients:
+            targetEntity: User
+            mappedBy: doctorId
+    manyToOne:
+        doctorId:
+            targetEntity: User
+            inversedBy: patients
+            joinColumn: 
+                onDelete: "SET NULL"
+
+    lifecycleCallbacks:
+        prePersist: [ setDateCreatedValue ]

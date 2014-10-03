@@ -1,0 +1,15 @@
+parameters:
+#    vizhaal_visplat.example.class: VizHAAL\VisplatBundle\Example
+
+services:
+#    vizhaal_visplat.example:
+#        class: %vizhaal_visplat.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]
+
+#    Overwrite the authentication sucess event
+#    In order to pass the username parameter.
+    security.authentication.success_handler:
+        class:  VizHAAL\VisplatBundle\Handler\AuthenticationSuccessHandler
+        arguments:  ["@security.http_utils", {}, @router]
+        tags:
+            - { name: 'monolog.logger', channel: 'security' }

@@ -1,0 +1,33 @@
+VizHAAL\VisplatBundle\Entity\Role:
+    type: entity
+    repositoryClass: VizHAAL\VisplatBundle\Repository\RoleRepository
+    table: Role
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+    fields:
+        name:
+            type: string
+            length: 60
+            unique: true
+        description:
+            type: string
+            length: 250
+            unique: true
+        dateCreated:
+            type: datetime
+    manyToMany:
+        users:
+            targetEntity: User
+            inversedBy: roles
+            joinTable:
+                name: User_Role
+                joinColumns:
+                    roleId:
+                        referencedColumnName: id
+                inverseJoinColumns:
+                    userId:
+                        referencedColumnName: id
+    lifecycleCallbacks:
+        prePersist: [ setDateCreatedValue ]

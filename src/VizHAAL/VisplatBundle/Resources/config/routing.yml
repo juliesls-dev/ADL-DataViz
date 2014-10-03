@@ -1,0 +1,30 @@
+vizhaal_visplat_homepage:
+    pattern:  /
+    defaults: { _controller: VizHAALVisplatBundle:Visplat:status }
+
+vizhaal_visplat_dependency:
+    pattern: /dependency
+    defaults: { _controller: VizHAALVisplatBundle:Visplat:dependency}
+
+vizhaal_visplat_ajax_update_patient:
+    pattern: /ajax/patient
+    defaults: { _controller: VizHAALVisplatBundle:Visplat:handleAjaxUpdatePatient}
+    options:
+        expose: true
+
+vizhaal_visplat_ajax_update_date:
+    pattern: /ajax/date
+    defaults: { _controller: VizHAALVisplatBundle:Visplat:handleAjaxUpdateDate}
+    options:
+        expose: true
+
+login:
+    pattern:  /login
+    defaults: { _controller: VizHAALVisplatBundle:Visplat:login }
+
+login_check:
+    pattern:   /login_check
+
+logout:
+    pattern: /logout
+

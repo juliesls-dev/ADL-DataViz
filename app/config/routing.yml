@@ -1,9 +1,9 @@
-enstb_data_management:
-    resource: "@EnstbDataManagementBundle/Resources/config/routing.yml"
+vizhaal_data_management:
+    resource: "@VizHAALDataManagementBundle/Resources/config/routing.yml"
     prefix:   /data
 
-enstb_visplat:
-    resource: "@EnstbVisplatBundle/Resources/config/routing.yml"
+vizhaal_visplat:
+    resource: "@VizHAALVisplatBundle/Resources/config/routing.yml"
     prefix:   /
 
 admin:

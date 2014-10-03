@@ -1,0 +1,68 @@
+{% extends 'VizHAALVisplatBundle::base.html.twig' %}
+{% block body %}
+    <div class="navbar navbar-inverse vp-navbar" role="navigation">
+        <ul class="navbar-nav pull-right vp-navbar-text">
+            <li>
+                <a href="#" class="dropdown-toggle"
+                   data-toggle="dropdown">{{ app.session.get('username') | capitalize }}<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                    {% if is_granted('ROLE_ADMIN') %}
+                        <li><a href="{{ path('sonata_admin_dashboard') }}">Dashboard</a></li>
+                        <li class="divider"></li>
+                        <li><a href="{{ path('vizhaal_data_management_import') }}">Import Dataset</a></li>
+                        <li class="divider"></li>
+                    {% endif %}
+                    <li><a href="{{ path('logout') }}">Logout</a></li>
+                </ul>
+            </li>
+        </ul>
+        <p class="navbar-text navbar-right vp-navbar-text" style="margin-right: 4px !important">{{ icon('user') }}
+            Signed in as</p>
+    </div>
+    <div id="vp-navbar-fix-wrapper">
+        <div class="navbar navbar-default" id="vp-navbar-fix">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="{{ path('vizhaal_visplat_homepage') }}">Visualization Platform</a>
+                </div>
+                <div class="navbar-collapse collapse">
+                    {% if is_granted('ROLE_USER') %}
+                        {# Render date selector #}
+                        {% render(controller('VizHAALVisplatBundle:Visplat:dateForm')) %}
+                    {% endif %}
+                    {# Render patients selector #}
+                    {% if is_granted('ROLE_ADMIN') %}
+                        {% render(controller('VizHAALVisplatBundle:Visplat:patientForm')) %}
+                    {% endif %}
+                    <ul class="nav navbar-nav pull-right">
+                        <li><a href="{{ path('vizhaal_visplat_homepage') }}">ADLs</a></li>
+                        {% if is_granted('ROLE_ADMIN') %}
+                            <li><a href="{{ path('vizhaal_visplat_dependency') }}">Dependency</a></li>
+                            <li><a href="#">Sensors</a></li>
+                        {% endif %}
+                    </ul>
+                </div>
+                <!--/.navbar-collapse -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        {% block graph %}{% endblock %}
+    </div>
+    {% block footer %}
+        <footer>
+            <hr>
+            <div class="container">
+                <p>&copy; Telecom-Bretagne 2013</p>
+            </div>
+        </footer>
+    {% endblock %}
+
+{% endblock %}
+
